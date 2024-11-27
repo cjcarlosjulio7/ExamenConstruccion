@@ -1,0 +1,115 @@
+/*esto es un comentario en una hoja de estilos */ 
+
+body{
+    background-color:rgba(3, 3, 3, 0.932);
+}
+
+a{
+    font-size: 20px;
+    text-decoration: none;
+    color: greenyellow;
+   
+}
+
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+a:active{
+    color: rgb(235, 219, 219);
+    text-decoration: underline;
+}
+
+p{
+    text-align: end;
+    
+}
+
+h1{
+    color: whitesmoke; font-size: 50px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;
+}
+div{
+    text-align: center;
+}
+
+h3{
+    color:greenyellow; 
+    text-align: center;
+    padding: 5px;
+    border: 5px solid rgb(185, 252, 86);
+    margin:5px 10px 5px 10px; /*superior,derecha,abajo,izquierda*/
+    background-color: rgb(25, 31, 16);
+} 
+
+table, th,td{
+    border: 1px solid white;
+    color: greenyellow; 
+    font-size: 20px; 
+    margin: 0 auto; 
+    text-align: center;
+    /* border-collapse: collapse; esto es para que las lineas de la tabla se vean normal*/
+    padding: 5px;
+    /*border-spacing: 5px; agrandar el borde de la tabla*/
+}
+
+caption{
+    color: greenyellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+th{
+    background-color: black;
+
+}
+/*renglones pares*/
+tr:nth-child(even){
+    background-color: rgb(49, 73, 14);
+}
+/*renglones inpares*/
+tr:nth-child(odd){
+    background-color: rgb(25, 31, 16);
+}
+
+ul{
+    list-style-type: none;
+    overflow:hidden ; /*mostrar barra*/
+    background-image: url('https://i.pinimg.com/originals/36/ec/f4/36ecf41cf30bb7386b89beb2c30b2b8c.jpg');
+    background-color: rgb(139, 204, 35);
+    margin: 0;
+    padding: 0;   
+}
+
+
+li a {
+    float: left;
+    display: block;
+    color: aliceblue;
+    text-align:center;
+    padding: 15px;
+}
+
+li a:hover{
+    color: rgb(114, 117, 110);
+}
+
+
+ol{
+    list-style: none;
+    counter-reset: contador;
+    color: white;
+}
+ol li{
+    counter-increment: contador;
+}
+
+ol li::before{
+    content: 'Apodo ' counter(contador) ') '; 
+    color: rgb(48, 71, 13);
+}
+
+dl{
+    color: white;
+}
+
