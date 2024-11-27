@@ -15,10 +15,17 @@ jobs:
       - name: Revisar el código
         uses: actions/checkout@v3
 
-      - name: Verificar archivos HTML
+      - name: Instalar Node.js y HTMLHint
         run: |
-          sudo apt-get install -y html-xml-utils
-          htmldoc -v index.html
+          # Instalamos Node.js (si no está instalado) y HTMLHint
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+          npm install -g htmlhint
+
+      - name: Ejecutar validación de HTML con HTMLHint
+        run: |
+          # Ejecutamos HTMLHint para validar los archivos HTML
+          htmlhint index.html
 
   pruebas:
     runs-on: ubuntu-latest
@@ -27,10 +34,7 @@ jobs:
       - name: Revisar el código
         uses: actions/checkout@v3
 
-      - name: Instalar HTMLHint
-        run: npm install htmlhint
-
-      - name: Ejecutar validación de HTML
+      - name: Ejecutar pruebas de validación de HTML
         run: |
           htmlhint index.html
 
@@ -43,5 +47,7 @@ jobs:
 
       - name: Empaquetar la aplicación para el despliegue
         run: |
-          zip -r paginaWebCR7.zip .
-          echo "Desplegando paginaWebCR7.zip"
+          # Empaquetamos los archivos en un archivo .zip
+          zip -r website.zip .
+          # Simulamos el despliegue subiendo el archivo comprimido como artefacto
+          echo "Desplegando website.zip"
